@@ -9,6 +9,7 @@ public class Game {
     private Player player;
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
+    private String Gender;
 
     public Game() {
         room = new Room();
@@ -18,6 +19,7 @@ public class Game {
     }
 
     // prints a help menu to the left of the map
+    
     private void showHelp() {
         String[] cmds = {"Commands:",
                          "---------",
