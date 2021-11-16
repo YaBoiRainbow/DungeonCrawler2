@@ -11,11 +11,12 @@ public class Game {
     private ArrayList<Enemy> enemies;
     private String Gender;
 
-    public Game() {
+    public Game() { 
         room = new Room();
-        player = new Player(room.getPlayerStart());
+	player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
         enemies = room.getEnemies();
+
     }
 
     // prints a help menu to the left of the map

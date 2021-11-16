@@ -1,10 +1,9 @@
 // Player.java
-
 import ansi_terminal.*;
 
 public class Player extends Character {
     private Inventory items;
-
+    private String name;
     public Player(Position start) {
         // our starting details
         super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
@@ -31,7 +30,7 @@ public class Player extends Character {
 
     @Override
     public String getName() {
-        return "Player";
+        return name;
     }
 
     @Override
@@ -47,6 +46,6 @@ public class Player extends Character {
 
     public Inventory getInventory() {
         return items;
-    }
+    }	
 }
 
