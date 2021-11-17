@@ -3,15 +3,14 @@
 import ansi_terminal.*;
 
 public class Main {
-    public static void main(String args[]) throws InterruptedException{
-        Intro intro = new Intro();
-	intro.getInfo();
+    public static void main(String args[])throws InterruptedException{
 	// put termain in raw mode
         Terminal.rawMode();
 
         // make and run the Game
         Game game = new Game();
-        game.run();
+        game.player.getInfo();
+	game.run();
 
         // put terminal back into cooked mode
         Terminal.cookedMode();

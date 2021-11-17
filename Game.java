@@ -1,17 +1,15 @@
 // Game.java
 // contains logic for running the Game
-
 import java.util.ArrayList;
 import ansi_terminal.*;
 
-public class Game {
+public class Game{
+    private String name;
     private Room room;
-    private Player player;
+    public Player player;
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
-    private String Gender;
-
-    public Game() { 
+    public Game(){ 	
         room = new Room();
 	player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
@@ -207,8 +205,8 @@ public class Game {
             Box thingHere = checkForBox();
             if (thingHere != null) {
                 setStatus("Here you find: " + thingHere.getItem().getName());
-            }
-        }
+	    }
+	    }
     }
 }
 
