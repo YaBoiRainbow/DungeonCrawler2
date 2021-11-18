@@ -29,7 +29,7 @@ public class ItemGenerator{
 	//make new random generator
 	private static Random rng = new Random();
 
-	public static Item Generate(){
+	public static Item generate(){
 
 		//generate the type
 		int intType = rng.nextInt(3);
