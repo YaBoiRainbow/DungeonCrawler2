@@ -1,61 +1,79 @@
-// ItemGenerator.java
-// this class contains a static method for creating items randomly
-
 import java.util.Random;
-
 public class ItemGenerator{
-	private static String[] descriptor =new String[]{"Poor","Rusted","Mystic","Fine","Dazzling","Warped","Elder","Antique","Good","Grand"};
-	private static String[] materials =new String[]{"Wood","Iron","Steel","Scale","Stone","Bronze","Plastic","Titanium","Ketchup", "Tungsten"};
-	private static ItemType[] types = new ItemType[]{ItemType.Weapon, ItemType.Armor, ItemType.Other};
+	//local varriables
+	private static ItemType type;
+        private static String name;
+        private static int weight;
+        private static int value;
+        private static int strength;
 
-	public static Item generate(){
-		Random rng = new Random();
-		double rngprep= rng.nextDouble();
-		rngprep = rngprep*10;
-		int rngint = (int)rngprep;
-		String name= "";
-		name += descriptor[rngint];
-		name += " ";
-		double rnga=rng.nextDouble();//turns out i didnt need to do this.
-		rnga=rnga*10;
-		rngint= (int)rnga;
-		name += materials[rngint];
-		name += " ";
-		double rngb=rng.nextDouble();//ill fix it later
-                rngb=rngb*3;
-                rngint= (int)rngb;
-		ItemType type = types[rngint];
-		switch (rngint){
-			case 0: name += " Sword";
-				break;
-			case 1: name += " Mail";
-				break;
-			case 2: double rngc=rng.nextDouble();
-               	 		rngc=rngc*3;
-                		int rngin= (int)rngc;
-				switch (rngin){
-                       		 case 0: name += " Ball";
-                               		 break;
-                       		 case 1: name += " Ring";
-                         		       break;
-                       		 case 2: name += " Pot";
-					break;
-				}
-				break;
-			}//this may be the messiest block of code i have ever written.
-			//sponsored by gamestop for making me work till 10:15
-		rngprep=rng.nextDouble();
-                rngprep=rngprep*20;
-                rngint= (int)rngprep;
-		int w = rngint;
-		rngprep=rng.nextDouble();
-                rngprep=rngprep*50;
-                rngint= (int)rngprep;
-                int v = rngint;
-		rngprep=rng.nextDouble();
-                rngprep=rngprep*15;
-                rngint= (int)rngprep;
-                int s = rngint;
-		return new Item(type, name, w, v, s);		
+	//Weapon varribles 
+	private static String[] weaponName = {"Bronze Sword", "Iron Sword", "Steel Sword", "Gold Sword", "Dragon Sword"};
+	private static int[] weaponWeight = {9, 8, 11, 7, 13};
+	private static int[] weaponValue = {10, 13, 20, 35, 60};
+	private static int[] weaponStrength = {4, 5, 7, 6, 10};
+
+	//Armor varribles
+	private static String[] armorName = {"Bronze Armor", "Iron Armor", "Steel Armor", "Gold Armor", "Dragon Armor"};
+	private static int[] armorWeight = {15, 19, 28, 14, 40};
+	private static int[] armorValue = {25, 32, 45, 80, 120};
+	private static int[] armorStrength = {16, 20, 28, 24, 40};
+
+	//Other varribles
+	private static String[] otherName = {"Diamond", "Cheese Wheel"};
+	private static int[] otherWeight = {1, 4};
+	private static int[] otherValue = {200, 4000};
+	private static int[] otherStrength = {200, 1};
+
+
+	//make new random generator
+	private static Random rng = new Random();
+
+	public static Item Generate(){
+
+		//generate the type
+		int intType = rng.nextInt(3);
+
+		//find out what type of item it is
+		switch(intType){
+			case 1: type = ItemType.Weapon; break;
+			case 2: type = ItemType.Armor;  break;
+			case 3: type = ItemType.Other;  break;	
+			default: type = ItemType.Other; break;
+
+		//depending on the type, set the item varribles 		 
+		}if(type.equals(ItemType.Weapon)){
+			//get a random weapon
+			int weaponNum = rng.nextInt(5);
+			//set all varribles of the weapon to the item
+			name = weaponName[weaponNum];
+			weight = weaponWeight[weaponNum];
+			value = weaponValue[weaponNum];
+			strength = weaponStrength[weaponNum];
+
+		}if(type.equals(ItemType.Armor)){
+			
+			//get a random Armor
+			int armorNum = rng.nextInt(5);
+
+			//set all varrible of the armor to the item 
+			name = armorName[armorNum];
+			weight = armorWeight[armorNum];
+			value = armorValue[armorNum];
+			strength = armorStrength[armorNum];
+
+                }if(type.equals(ItemType.Other)){
+			
+			//get a random Other
+			int otherNum = rng.nextInt(2);
+
+			//set all varribles of the other to the item
+			name = otherName[otherNum];
+			weight = otherWeight[otherNum];
+			value = otherValue[otherNum];
+			strength = otherStrength[otherNum];
+		}
+		Item item = new Item(type, name, weight, value, strength);
+	return item;
 	}
 }
