@@ -67,7 +67,7 @@ public class Player extends Character {
                                 Thread.sleep(3000);
                                 break;
                         case 3:
-                                System.out.println("I... I am your wort nightmare...");
+                                System.out.println("I... I am your worst nightmare...");
                                 Thread.sleep(3000);
                                 break;
                         default:
