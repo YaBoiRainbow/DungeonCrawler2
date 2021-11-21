@@ -8,7 +8,6 @@ import ansi_terminal.*;
 public class Room {
     // the grid holds the room geometry
     private String[] grid;
-
     // the size of the room
     private int rows;
     private int cols;
@@ -127,6 +126,7 @@ public class Room {
     public boolean canGo(int row, int col) {
         return grid[row].charAt(col) != '#';
     }
+   
 }
 
 

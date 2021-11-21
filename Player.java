@@ -15,8 +15,8 @@ public class Player extends Character {
 
         // give them some basic stuff to start with
         // TODO make up your own starting equipment!
-        items.addAndEquip(new Item(ItemType.Weapon, "Iron Dagger", 5, 12, 7));
-        items.addAndEquip(new Item(ItemType.Armor, "Leather Armor", 15, 20, 3));
+        items.addAndEquip(new Item(ItemType.Weapon, "Iron Sword", 8, 13, 5));
+        items.addAndEquip(new Item(ItemType.Armor, "Iron Armor", 19, 32, 20));
     }
 
     @Override
@@ -50,8 +50,8 @@ public class Player extends Character {
         return items;
     }public void getInfo()throws InterruptedException{
                 Terminal.cookedMode();
-                int choice;
                 Scanner in = new Scanner(System.in);
+		int choice;
                 System.out.println("Who... Who are you...");
                 this.name = in.nextLine();
                 System.out.println(this.name + "... I see... And what is it that you are here for...");
@@ -75,6 +75,6 @@ public class Player extends Character {
                                 Thread.sleep(5000);
                                 break;
                 }Terminal.rawMode();
-        }	
+    }	    
 }
 
