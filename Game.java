@@ -28,6 +28,8 @@ public class Game{
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
+			 "Go down stairs: j",
+			 "Go up stairs: k",
                          "Quit: q"
         };
         Terminal.setForeground(Color.GREEN);
@@ -85,7 +87,15 @@ public class Game{
     // handle the key which was read - return false if we quit the game
     private boolean handleKey(Key key) {
         switch (key) {
-            case p:
+	    case j:
+		goDown();
+		break;
+
+	    case k:
+		goUp();
+		break;
+
+	    case p:
                 pickup();
                 break;
 
@@ -167,7 +177,39 @@ public class Game{
         return true;
     }
 
-    public void run() {
+    private void goDown(){
+	int level = room.getLevel();
+	Position playerLocation = player.getPosition();
+	if(playerLocation.isAdjacent(room.goDown())){
+	    level++;
+	    room.changeLevel(level);
+	    this.boxes = room.getBoxes();
+            this.enemies = room.getEnemies();
+	    redrawMapAndHelp();
+	    setStatus("You went down a level");
+            Terminal.pause(1.25);
+
+	}else{
+	    setStatus("There is no where for you to go down.");
+	    Terminal.pause(1.25);
+	}
+    }private void goUp(){
+        int level = room.getLevel();
+        Position playerLocation = player.getPosition();
+        if(playerLocation.isAdjacent(room.goUp())){
+            level--;
+            room.changeLevel(level);
+            this.boxes = room.getBoxes();
+            this.enemies = room.getEnemies();
+            redrawMapAndHelp();
+            setStatus("You went up a level");
+            Terminal.pause(1.25);
+
+        }else{
+            setStatus("There is no where for you to go up.");
+            Terminal.pause(1.25);
+	}
+	}public void run() {
         // draw these for the first time now
         redrawMapAndHelp();
 
