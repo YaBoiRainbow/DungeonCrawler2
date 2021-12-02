@@ -5,7 +5,7 @@ import ansi_terminal.*;
 
 public class Player extends Character {
     private Inventory items;
-    private String name;
+    public static String name;
     public Player(Position start) {
         // our starting details
         super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);

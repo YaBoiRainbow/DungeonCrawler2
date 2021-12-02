@@ -40,7 +40,7 @@ public class Enemy extends Character {
 
     // randomly move this enemy in the room
     public void walk(Room room) {
-        // if a battle is active with this enemy, they DONT walk right after
+        // if a battle is active with this enemy, they DONT walk right afteri
         if (battleActive) {
             battleActive = false;
             return;
@@ -64,6 +64,10 @@ public class Enemy extends Character {
                     break;
             }
         }
+    }
+	//Prints out all of an enemies information in a string format. To be used in the save method
+    public String eToString(Enemy e){
+    	return this.name + "." + this.damage + "." + this.protection + "." + e.getRow() + "." + e.getCol() + "." + this.battleActive;
     }
 }
 

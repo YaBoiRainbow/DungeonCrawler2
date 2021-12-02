@@ -16,6 +16,12 @@ public class Box extends Entity {
     public Item getItem() {
         return item;
     }
+    //Converts a box to a string, in order to save it in a save.txt file.
+    public String boxToString(Box b){
+	String itemS = this.item.toString();
+	return b.getRow() + "." + b.getCol() + "." + itemS;
+	    
+    }
 }
 
 

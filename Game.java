@@ -5,10 +5,10 @@ import ansi_terminal.*;
 
 public class Game{
     private String name;
-    private Room room;
+    public static Room room;
     public Player player;
-    private ArrayList<Box> boxes;
-    private ArrayList<Enemy> enemies;
+    public static ArrayList<Box> boxes;
+    public static ArrayList<Enemy> enemies;
     public Game(){ 	
         room = new Room();
 	player = new Player(room.getPlayerStart());
@@ -25,11 +25,14 @@ public class Game{
                          "Move: Arrow Keys",
                          "Pickup an item: p",
                          "Drop an item: d",
-                         "List items: l",
+                         "List items: i",
                          "Equip weapon: w",
                          "Equip armor: a",
 			 "Go down stairs: j",
 			 "Go up stairs: k",
+			 "Save: s",
+			 "Load save: l",
+			 "Clear sace: c",
                          "Quit: q"
         };
         Terminal.setForeground(Color.GREEN);
@@ -99,7 +102,7 @@ public class Game{
                 pickup();
                 break;
 
-            case l:
+            case i:
                 player.getInventory().print();
                 redrawMapAndHelp();
                 break;
@@ -128,6 +131,13 @@ public class Game{
             case DOWN: player.move(1, 0, room);
                 break;
 
+	    case s: Save.save(player, Save.saved);
+		    break;
+
+	    case l: Save.load(player);
+		    break;
+	    case c: Save.clear();
+		   break;
             // and finally the quit command
             case q:
                 return false;

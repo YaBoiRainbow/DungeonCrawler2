@@ -8,7 +8,7 @@ import ansi_terminal.*;
 
 public class Inventory {
     // the actual list of items
-    private ArrayList<Item> items;
+    public static ArrayList<Item> items;
 
     // which item is equipped, if any
     private Item equippedArmor;

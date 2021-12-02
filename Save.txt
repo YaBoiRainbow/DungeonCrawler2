@@ -1,0 +1,19 @@
+Nico
+5
+20
+25
+38
+4
+Iron Sword 8 13 5
+Iron Armor 19 32 20
+Steel Armor 28 45 28
+Diamond 1 200 200
+2
+1.42.Iron Sword 8 13 5
+27.3.Iron Armor 19 32 20
+5
+Orc.8.4.3.47.false
+Orc.8.4.9.28.false
+Orc.8.4.17.30.false
+Goblin.4.2.26.43.false
+Goblin.4.2.28.5.false
