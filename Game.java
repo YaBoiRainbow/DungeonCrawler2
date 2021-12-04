@@ -190,7 +190,12 @@ public class Game{
     private void goDown(){
 	int level = room.getLevel();
 	Position playerLocation = player.getPosition();
-	if(playerLocation.isAdjacent(room.goDown())){
+	if(level == 3){
+	    setStatus("There is no where for you to go down.");
+            Terminal.pause(1.25);
+	    return;
+        }
+	else if(playerLocation.isAdjacent(room.goDown())){
 	    level++;
 	    room.changeLevel(level);
 	    this.boxes = room.getBoxes();
@@ -198,7 +203,6 @@ public class Game{
 	    redrawMapAndHelp();
 	    setStatus("You went down a level");
             Terminal.pause(1.25);
-
 	}else{
 	    setStatus("There is no where for you to go down.");
 	    Terminal.pause(1.25);
@@ -206,19 +210,23 @@ public class Game{
     }private void goUp(){
         int level = room.getLevel();
         Position playerLocation = player.getPosition();
-        if(playerLocation.isAdjacent(room.goUp())){
-            level--;
+	if(level == 1){
+	    setStatus("There is no where for you to go up.");
+            Terminal.pause(1.25);
+	    return;
+        }
+	else if(playerLocation.isAdjacent(room.goUp())){
+	    level--;
             room.changeLevel(level);
             this.boxes = room.getBoxes();
             this.enemies = room.getEnemies();
             redrawMapAndHelp();
             setStatus("You went up a level");
             Terminal.pause(1.25);
-
-        }else{
+	}else{
             setStatus("There is no where for you to go up.");
             Terminal.pause(1.25);
-	}
+	    }
 	}public void run() {
         // draw these for the first time now
         redrawMapAndHelp();

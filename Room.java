@@ -190,12 +190,12 @@ public class Room {
             System.out.print("\n\r");
         }
     }public Position goUp(){
-	for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < cols; col++) {
-                if (grid[row].charAt(col) == 'U'){
+	    for (int row = 0; row < rows; row++) {
+                for (int col = 0; col < cols; col++) {
+                    if (grid[row].charAt(col) == 'U'){
     			return new Position(row, col);
 		}
-    	    }
+	    }
 	}return null;
     }public Position goDown(){
         for (int row = 0; row < rows; row++) {
