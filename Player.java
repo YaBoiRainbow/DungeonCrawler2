@@ -51,22 +51,22 @@ public class Player extends Character {
     }public void getInfo()throws InterruptedException{
                 Terminal.cookedMode();
                 Scanner in = new Scanner(System.in);
-		int choice;
+		String choice;
                 System.out.println("Who... Who are you...");
                 this.name = in.nextLine();
                 System.out.println(this.name + "... I see... And what is it that you are here for...");
                 System.out.println("(Enter the number corrisponding to your answer)\n1: For Glory!\n2: To destroy you!\n3: I dont know, who even are you?");
-                choice = in.nextInt();
+                choice = in.nextLine();
                 switch(choice){
-                        case 1:
+                        case "1":
                                 System.out.println("As you wish...");
                                 Thread.sleep(3000);
                                 break;
-                        case 2:
+                        case "2":
                                 System.out.println("... You will try...");
                                 Thread.sleep(3000);
                                 break;
-                        case 3:
+                        case "3":
                                 System.out.println("I... I am your worst nightmare...");
                                 Thread.sleep(3000);
                                 break;
