@@ -190,7 +190,7 @@ public class Game{
     private void goDown(){
 	int level = room.getLevel();
 	Position playerLocation = player.getPosition();
-	if(level == 3){
+	if(level == 4){
 	    setStatus("There is no where for you to go down.");
             Terminal.pause(1.25);
 	    return;
