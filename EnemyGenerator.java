@@ -14,17 +14,17 @@ public class EnemyGenerator {
 	switch(enemyType){
 		case 0: name = "Goblin";
 			health = 9;
-			damage = 9;
-			protection = 2;
+			damage = 4;
+			protection = 1;
 			break;
 		case 1: name = "Orc";
 			health = 12;
-			damage = 13;
-			protection = 4;
+			damage = 7;
+			protection = 2;
 			break;
 		case 2: name = "Zombie";
-			health = 2;
-			damage = 12;
+			health = 5;
+			damage = 10;
 			protection = 1;
 			break;
 		case 3: name = "Evil Breadstick";

@@ -17,7 +17,7 @@ public class ItemGenerator{
 	private static String[] armorName = {"Bronze Armor", "Iron Armor", "Steel Armor", "Gold Armor", "Dragon Armor"};
 	private static int[] armorWeight = {15, 19, 28, 14, 40};
 	private static int[] armorValue = {25, 32, 45, 80, 120};
-	private static int[] armorStrength = {16, 20, 28, 24, 40};
+	private static int[] armorStrength = {1, 1, 2, 2, 3};
 
 	//Other varribles
 	private static String[] otherName = {"Diamond", "Cheese Wheel"};
