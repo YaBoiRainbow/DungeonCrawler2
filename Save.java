@@ -110,7 +110,6 @@ public class Save{
 		//while loop repeats until there is no more informtion in the save.txt file.
                 while(lf.hasNextLine()){
 		//i acts as a line counter, counting what line the pc is currently on.
-                i++;
 		//Takes in an entire line of the Save file and converts it into a string
                 String line = lf.nextLine();
                 int lLength = line.length();
@@ -120,29 +119,36 @@ public class Save{
 		//Since i == 0, we are on the first line, which always will be the players name and replaces it with whats in the firat line of the save file. 
                 if(i == 0){
                         player.name = line;
+			i++;
                 }
 		//Since i == 1, we are on the second line of the file. We take in the players damage, and convert it from a String to an int, using Integer,valueOf(). We then save that value to loadDmg.
                 else if(i == 1){
                         int loadDmg  = Integer.valueOf(line);
+			i++;
                 }
                 else if(i == 2){
                         int loadProc = Integer.valueOf(line);
+			i++;
                 }
                 else if(i == 3){
                         int loadPRow = Integer.valueOf(line);
+			i++;
                 }
                 else if(i == 4){
                         int loadPCol = Integer.valueOf(line);
+			i++;
                 }
                 else if(i == 5){
                         invSize = Integer.valueOf(line);
-                        loadInv = new ArrayList<Item>(invSize);
-                }
+			i++;
+                }else if(i == 6){
+			loadInv = new ArrayList<Item>(invSize);
+		}
 		//Inside this if statement, the computer takes all the variables individually from an Item from the players saved inventory and converts its proper variable, and then adds it to the players new load inventory.
 		//
 		//Explaining the if statement parameters.
 		//If we are past the player info lines (i > 5), then for however long the array is is how many items we create.
-                else if(i > 5 && i < 5 + invSize){
+                else if(i > 6 && i < 6 + invSize){
 			//Saves the index of the first space between Item variables
                         int spaceIndex = line.indexOf(" ");
 			//it then saves a substring of the text between spaces
@@ -171,12 +177,12 @@ public class Save{
 
 		}
 		//After loading in the Items info, it then takes in how many Boxes there are in the map, so the computer can then know how many Boxes it will need to create.
-		else if(i == 5 + invSize){
+		else if(i == 6 + invSize){
 			boxSize = Integer.valueOf(line);
 			loadBox = new ArrayList<Box> (boxSize);
 		}
 		//Loads the boxs coordinates and what item is inside, as well as the items properties.
-		else if(i > 5 + invSize && i < 5 + invSize + boxSize){
+		else if(i > 6 + invSize && i < 6 + invSize + boxSize){
 			int spaceIndex = line.indexOf(" ");
 			String bStrRow = line.substring(0, spaceIndex);
 		       	int bRow = Integer.valueOf(bStrRow);
@@ -210,11 +216,11 @@ public class Save{
 		}
 
 		//It then restarts the same process but with enemies in the map instead of boxes.
-		else if(i == 5 + invSize + boxSize){
+		else if(i == 6 + invSize + boxSize){
 			eSize = Integer.valueOf(line);
 		}
 			loadEnemy = new ArrayList<Enemy>(eSize);
-		if(i > 5 + invSize + boxSize && i < 5 + invSize + boxSize + eSize){
+		if(i > 6 + invSize + boxSize && i < 6 + invSize + boxSize + eSize){
 			int spaceIndex = line.indexOf(".");
 			String enemyName = line.substring(0,spaceIndex);
 			
