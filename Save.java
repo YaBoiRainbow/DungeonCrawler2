@@ -256,6 +256,7 @@ public class Save{
 	saved = new PrintWriter("Save.txt");
 	saved.print("");
 	saved.close();
+	System.out.println("Save cleared!");
 	}
 	catch(FileNotFoundException e){
 		System.out.println("Error: Save file not found");

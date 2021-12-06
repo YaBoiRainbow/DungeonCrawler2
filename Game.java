@@ -32,7 +32,7 @@ public class Game{
 			 "Go up stairs: k",
 			 "Save: s",
 			 "Load save: l",
-			 "Clear sace: c",
+			 "Clear save: c",
                          "Quit: q"
         };
         Terminal.setForeground(Color.GREEN);
