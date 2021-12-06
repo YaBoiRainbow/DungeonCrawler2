@@ -217,7 +217,10 @@ public class Room {
 		grid = grid3;
 		Terminal.clear();
 	}else{
-       		System.out.println("You found the exit! Thanks for playing!");
+       		Terminal.clear();
+		Terminal.cookedMode();
+		Terminal.clear();
+		System.out.println("You found the exit! Thanks for playing!");
                 Terminal.pause(3);
             	System.exit(0); 	
 
