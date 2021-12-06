@@ -6,6 +6,12 @@ import java.util.Scanner;
 
 import ansi_terminal.*;
 
+/**
+ *
+ *Inventory as a class is used to register the entity of the player.  
+ *@author Professor Ian, Tommy Garloch, Simon Jones, and Nico Guzzone.
+ */
+
 public class Inventory {
     // the actual list of items
     public static ArrayList<Item> items;
@@ -17,10 +23,21 @@ public class Inventory {
     // the max weight limit for the player here
     private int maxWeight;
 
+/**
+ *Constructor establishes how much weight the Inventory has a maximum. This is so players cannot just pick everything up in the map.
+ *@param maxWeight passes in the maximum weight limit for the Inventory. 
+ */
+
     public Inventory(int maxWeight) {
         items = new ArrayList<Item>();
         this.maxWeight = maxWeight;
     }
+
+    /**
+     *The add method makes it possible to add an Item object while determining if the character's inventory can carry it. 
+     *@return returns a boolean determining if the item added will take the inventory above its max weight.
+     *
+     */
 
     // returns true on success, false when full
     public boolean add(Item item) {
@@ -34,6 +51,7 @@ public class Inventory {
 
     // this method not only adds the item, but equips it into the correct slot
     // it is used for setting up the player's starting gear
+    
     public void addAndEquip(Item item) {
         items.add(item);
 
