@@ -1,19 +1,18 @@
-Bob
-5
-20
 3
-22
+5
+1
+7
+35
 2
 Iron Sword 8 13 5
-Iron Armor 19 32 20
+Iron Armor 19 32 1
 4
-1.42.Steel Sword 11 20 7
-8.29.Iron Armor 19 32 20
-25.37.Diamond 1 200 200
-27.3.Cheese Wheel 4 4000 1
-5
-Orc.8.4.3.46.false
-Zombie.9.1.8.27.false
-Orc.8.4.16.42.false
-Goblin.4.2.26.46.false
-Orc.8.4.25.7.false
+1.42.Gold Sword 7 35 6
+8.29.Steel Sword 11 20 7
+25.37.Iron Armor 19 32 1
+27.3.Diamond 1 200 200
+4
+Evil Breadstick.1.1.7.53.false
+Evil Breadstick.1.1.20.41.false
+Evil Breadstick.1.1.25.46.false
+Goblin.4.1.24.7.false
