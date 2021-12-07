@@ -145,7 +145,7 @@ public class Save{
 		//If we are past the player info lines (i > 5), then for however long the array is is how many items we create.
                 else if(i > 6 && i < 6 + invSize){
 			//Saves the index of the first space between Item variables
-                        int spaceIndex = line.indexOf(" ");
+                        int spaceIndex = line.indexOf(".");
 			//it then saves a substring of the text between spaces
                         String itemType = line.substring(0,spaceIndex);
 
@@ -153,14 +153,14 @@ public class Save{
                         ItemType iT = Enum.valueOf(ItemType.class, itemType);
 
 			//starts where the last variable ended and goes till the next space.
-                        int spaceIndex2 = line.indexOf(" ", spaceIndex);
+                        int spaceIndex2 = line.indexOf(".", spaceIndex);
                         String nombre = line.substring(spaceIndex + 1, spaceIndex2);
 
-                        int spaceIndex3 = line.indexOf(" ", spaceIndex2);
+                        int spaceIndex3 = line.indexOf(".", spaceIndex2);
                         String weight = line.substring(spaceIndex2 +1, spaceIndex3);
                         int wg = Integer.valueOf(weight);
 
-                        int spaceIndex4 = line.indexOf(" ", spaceIndex3);
+                        int spaceIndex4 = line.indexOf(".", spaceIndex3);
                         String val = line.substring(spaceIndex3 + 1, spaceIndex4);
                         int value = Integer.valueOf(val);
 
