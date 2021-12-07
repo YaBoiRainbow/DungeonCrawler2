@@ -1,4 +1,11 @@
 import java.util.Random;
+
+/**
+ *
+ *ItemGenerator as a class generates random Items with stats for the player to collect and use.
+ *@author Professor Ian, Tommy Garloch, Simon Jones, and Nico Guzzone.
+ */
+
 public class ItemGenerator{
 	//local varriables
 	private static ItemType type;
@@ -27,8 +34,14 @@ public class ItemGenerator{
 
 
 	//make new random generator
+	/**
+	 *fills the rng variable with a random number.
+	 */
 	private static Random rng = new Random();
 
+	/**
+	 *Generates a random Item based off of the random number generated.
+	 */
 	public static Item generate(){
 
 		//generate the type

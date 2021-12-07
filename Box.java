@@ -10,6 +10,7 @@ import ansi_terminal.*;
  *This class extends {@link Entity}
  *@author Professor Ian, Tommy Garloch, Simon Jones, and Nico Guzzone.
  */
+
 public class Box extends Entity {
     // the Item that is in the box
     private Item item;

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import ansi_terminal.*;
 
+
+
+
+
 public abstract class Character extends Entity {
     // the characters health points
     private int hp;
