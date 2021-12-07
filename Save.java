@@ -124,11 +124,9 @@ public class Save{
 		//Since i == 1, we are on the second line of the file. We take in the players damage, and convert it from a String to an int, using Integer,valueOf(). We then save that value to loadDmg.
                 if(i == 1){
                         int loadDmg  = Integer.valueOf(line);
-			System.out.println("loadDmg" +loadDmg);
                 }
                 else if(i == 2){
                         int loadProc = Integer.valueOf(line);
-			System.out.println("loadProc " + loadProc);
                 }
                 else if(i == 3){
                         int loadPRow = Integer.valueOf(line);
@@ -224,26 +222,21 @@ public class Save{
 			int spaceIndex2 = line.indexOf(".", spaceIndex + 1);
 			int eAtck = Integer.valueOf(line.substring(spaceIndex +1,spaceIndex2));
 	
-			int spaceIndex3 = line.indexOf(".", spaceIndex2 + 1);
-			int eHeal = Integer.valueOf(line.substring(spaceIndex2 + 1,spaceIndex3));
-			
 			//if(line.substring(spaceIndex3 + 1) == "false"){
 			//	boolean bttlActive = false;
 			//}
 			//else{boolean bttlActive = true;}
 
-			int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
-			String eStrRow = line.substring(spaceIndex3 + 1, spaceIndex4);
+			int spaceIndex3 = line.indexOf(".", spaceIndex2 + 1);
+			String eStrRow = line.substring(spaceIndex2 + 1, spaceIndex3);
 			int erow = Integer.valueOf(eStrRow);
 
-			int spaceIndex5 = line.indexOf(".", spaceIndex4 + 1);
-			String eStrCol = line.substring(spaceIndex4 + 1,spaceIndex5);
+			int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
+			String eStrCol = line.substring(spaceIndex3 + 1, spaceIndex4);
 			int ecol = Integer.valueOf(eStrCol);
 
-			String eStrProt = line.substring(spaceIndex5 + 1);
+			String eStrProt = line.substring(spaceIndex4 + 1);
 			int eProt = Integer.valueOf(eStrProt);
-			Enemy e = new Enemy(enemyName, erow, ecol, eHeal, eAtck, eProt);
-			loadEnemy.add(e);
 		}
 		}	
 		}

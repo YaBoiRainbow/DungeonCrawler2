@@ -68,7 +68,7 @@ public class Enemy extends Character {
 
 	//Prints out all of an enemies information in a string format. To be used in the save method
     public String eToString(Enemy e){
-    	return this.name + "." + this.damage + "." + this.protection + "." + e.getRow() + "." + e.getCol();
+    	return this.name + "." + this.damage +  "." + e.getRow() + "." + e.getCol() + "." + this.protection;
     }
 }
 
