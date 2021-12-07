@@ -178,7 +178,7 @@ public class Save{
 			loadBox = new ArrayList<Box> (boxSize);
 		}
 		//Loads the boxs coordinates and what item is inside, as well as the items properties.
-		else if(i > 6 + invSize && i < 6 + invSize + boxSize){
+		else if(i > 6 + invSize && i < 6 + invSize + boxSize +1){
 			int spaceIndex = line.indexOf(".");
 			String bStrRow = line.substring(0, spaceIndex);
 		       	int bRow = Integer.valueOf(bStrRow);
@@ -202,8 +202,7 @@ public class Save{
 			String val = line.substring(spaceIndex5 +1, spaceIndex6);
 			int value = Integer.valueOf(val);
 
-			int spaceIndex7 = line.indexOf(".",spaceIndex6 + 1);
-			String strength = line.substring(spaceIndex6 +1, spaceIndex7);
+			String strength = line.substring(spaceIndex6 +1);
 			int stren = Integer.valueOf(strength);
 
 			Item a = new Item(iT,nombre,wg,value,stren);
