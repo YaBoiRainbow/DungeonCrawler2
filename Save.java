@@ -124,9 +124,11 @@ public class Save{
 		//Since i == 1, we are on the second line of the file. We take in the players damage, and convert it from a String to an int, using Integer,valueOf(). We then save that value to loadDmg.
                 if(i == 1){
                         int loadDmg  = Integer.valueOf(line);
+			System.out.println("loadDmg" +loadDmg);
                 }
                 else if(i == 2){
                         int loadProc = Integer.valueOf(line);
+			System.out.println("loadProc " + loadProc);
                 }
                 else if(i == 3){
                         int loadPRow = Integer.valueOf(line);
@@ -155,10 +157,12 @@ public class Save{
 			//starts where the last variable ended and goes till the next space.
                         int spaceIndex2 = line.indexOf(".", spaceIndex + 1);
                         String nombre = line.substring(spaceIndex + 1, spaceIndex2);
+			System.out.println("nombre" + nombre);
 
                         int spaceIndex3 = line.indexOf(".", spaceIndex2 + 1);
                         String weight = line.substring(spaceIndex2 +1, spaceIndex3);
                         int wg = Integer.valueOf(weight);
+			System.out.println("wg " + wg);
 
                         int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
                         String val = line.substring(spaceIndex3 + 1, spaceIndex4);
@@ -182,6 +186,7 @@ public class Save{
 			int spaceIndex = line.indexOf(".");
 			String bStrRow = line.substring(0, spaceIndex);
 		       	int bRow = Integer.valueOf(bStrRow);
+			System.out.println("bRow" + bRow);
 
 			int spaceIndex2 = line.indexOf(".", spaceIndex + 1);
 			String bStrCol = line.substring(spaceIndex +1, spaceIndex2);
@@ -193,7 +198,7 @@ public class Save{
 
 			int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
 			String nombre = line.substring(spaceIndex3 +1, spaceIndex4);
-			
+			System.out.println("box item nombre " + nombre);
 			int spaceIndex5 = line.indexOf(".", spaceIndex4 + 1);
 			String weight = line.substring(spaceIndex4 +1, spaceIndex5);
 			int wg = Integer.valueOf(weight);
@@ -218,12 +223,13 @@ public class Save{
 		if(i > 6 + invSize + boxSize && i < 6 + invSize + boxSize + eSize){
 			int spaceIndex = line.indexOf(".");
 			String enemyName = line.substring(0,spaceIndex);
+			System.out.println("enemyName" + enemyName);
 			
 			int spaceIndex2 = line.indexOf(".", spaceIndex + 1);
-			int eAtck = Integer.valueOf(line.substring(spaceIndex ,spaceIndex2));
-
+			int eAtck = Integer.valueOf(line.substring(spaceIndex +1,spaceIndex2));
+			System.out.println("eAtck " + eAtck);
 			int spaceIndex3 = line.indexOf(".", spaceIndex2 + 1);
-			int eHeal = Integer.valueOf(line.substring(spaceIndex2,spaceIndex3));
+			int eHeal = Integer.valueOf(line.substring(spaceIndex2 + 1,spaceIndex3));
 			
 			//if(line.substring(spaceIndex3 + 1) == "false"){
 			//	boolean bttlActive = false;
@@ -231,15 +237,15 @@ public class Save{
 			//else{boolean bttlActive = true;}
 
 			int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
-			String eStrRow = line.substring(spaceIndex3, spaceIndex4);
+			String eStrRow = line.substring(spaceIndex3 + 1, spaceIndex4);
 			int erow = Integer.valueOf(eStrRow);
 
 			int spaceIndex5 = line.indexOf(".", spaceIndex4 + 1);
-			String eStrCol = line.substring(spaceIndex4,spaceIndex5);
+			String eStrCol = line.substring(spaceIndex4 + 1,spaceIndex5);
 			int ecol = Integer.valueOf(eStrCol);
 
 			int spaceIndex6 = line.indexOf(".", spaceIndex5 + 1);
-			String eStrProt = line.substring(spaceIndex5,spaceIndex6);
+			String eStrProt = line.substring(spaceIndex5 + 1,spaceIndex6);
 			int eProt = Integer.valueOf(eStrProt);
 			Enemy e = new Enemy(enemyName, erow, ecol, eHeal, eAtck, eProt);
 			loadEnemy.add(e);
