@@ -179,31 +179,31 @@ public class Save{
 		}
 		//Loads the boxs coordinates and what item is inside, as well as the items properties.
 		else if(i > 6 + invSize && i < 6 + invSize + boxSize){
-			int spaceIndex = line.indexOf(" ");
+			int spaceIndex = line.indexOf(".");
 			String bStrRow = line.substring(0, spaceIndex);
 		       	int bRow = Integer.valueOf(bStrRow);
 
-			int spaceIndex2 = line.indexOf(" ", spaceIndex + 1);
-			String bStrCol = line.substring(spaceIndex, spaceIndex2);
+			int spaceIndex2 = line.indexOf(".", spaceIndex + 1);
+			String bStrCol = line.substring(spaceIndex +1, spaceIndex2);
 			int bCol = Integer.valueOf(bStrCol);
 
-			int spaceIndex3 = line.indexOf(" ", spaceIndex2 + 1);
-			String itemType = line.substring(spaceIndex2, spaceIndex3);
+			int spaceIndex3 = line.indexOf(".", spaceIndex2 + 1);
+			String itemType = line.substring(spaceIndex2 +1, spaceIndex3);
 			ItemType iT = Enum.valueOf(ItemType.class, itemType);
 
-			int spaceIndex4 = line.indexOf(" ", spaceIndex3 + 1);
-			String nombre = line.substring(spaceIndex3, spaceIndex4);
+			int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
+			String nombre = line.substring(spaceIndex3 +1, spaceIndex4);
 			
-			int spaceIndex5 = line.indexOf(" ", spaceIndex4 + 1);
-			String weight = line.substring(spaceIndex4, spaceIndex5);
+			int spaceIndex5 = line.indexOf(".", spaceIndex4 + 1);
+			String weight = line.substring(spaceIndex4 +1, spaceIndex5);
 			int wg = Integer.valueOf(weight);
 
-			int spaceIndex6 = line.indexOf(" ",spaceIndex5 + 1);
-			String val = line.substring(spaceIndex5, spaceIndex6);
+			int spaceIndex6 = line.indexOf(".",spaceIndex5 + 1);
+			String val = line.substring(spaceIndex5 +1, spaceIndex6);
 			int value = Integer.valueOf(val);
 
-			int spaceIndex7 = line.indexOf(" ",spaceIndex6 + 1);
-			String strength = line.substring(spaceIndex6, spaceIndex7);
+			int spaceIndex7 = line.indexOf(".",spaceIndex6 + 1);
+			String strength = line.substring(spaceIndex6 +1, spaceIndex7);
 			int stren = Integer.valueOf(strength);
 
 			Item a = new Item(iT,nombre,wg,value,stren);
