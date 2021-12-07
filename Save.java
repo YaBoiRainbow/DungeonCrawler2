@@ -106,13 +106,14 @@ public class Save{
 		int eSize = 0;
 		ArrayList<Enemy> loadEnemy = new ArrayList<Enemy>();
 		String line;
-                int i = 0;
+                int i = -1;
 		//while loop repeats until there is no more informtion in the save.txt file.
                 while(lf.hasNextLine()){
 		//i acts as a line counter, counting what line the pc is currently on.
 		//Takes in an entire line of the Save file and converts it into a string
                 line = lf.nextLine();
                 int lLength = line.length();
+		i++;
 
 		//heres where things get tricky.
 
@@ -120,7 +121,6 @@ public class Save{
                 if(i == 0){
                         player.name = line;
 		}
-		i++;
 		//Since i == 1, we are on the second line of the file. We take in the players damage, and convert it from a String to an int, using Integer,valueOf(). We then save that value to loadDmg.
                 if(i == 1){
                         int loadDmg  = Integer.valueOf(line);
@@ -148,8 +148,6 @@ public class Save{
                         int spaceIndex = line.indexOf(" ");
 			//it then saves a substring of the text between spaces
                         String itemType = line.substring(0,spaceIndex);
-			//After saving the text as a string it then converts it to its pproper variable form (if needed)
-                        ItemType iT = Enum.valueOf(ItemType.class, itemType);
 
 			//starts where the last variable ended and goes till the next space.
                         int spaceIndex2 = line.indexOf(" ", spaceIndex);
