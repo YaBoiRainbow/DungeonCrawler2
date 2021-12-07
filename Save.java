@@ -149,6 +149,9 @@ public class Save{
 			//it then saves a substring of the text between spaces
                         String itemType = line.substring(0,spaceIndex);
 
+			//After saving the text as a string it then converts it to its pproper variable form (if needed)
+                        ItemType iT = Enum.valueOf(ItemType.class, itemType);
+
 			//starts where the last variable ended and goes till the next space.
                         int spaceIndex2 = line.indexOf(" ", spaceIndex);
                         String nombre = line.substring(spaceIndex + 1, spaceIndex2);
