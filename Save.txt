@@ -1,18 +1,19 @@
-3
+simon
 5
 1
-7
-35
+4
+23
 2
 Iron Sword 8 13 5
 Iron Armor 19 32 1
 4
-1.42.Gold Sword 7 35 6
-8.29.Steel Sword 11 20 7
+1.42.Cheese Wheel 4 4000 1
+8.29.Dragon Armor 40 120 3
 25.37.Iron Armor 19 32 1
-27.3.Diamond 1 200 200
-4
-Evil Breadstick.1.1.7.53.false
-Evil Breadstick.1.1.20.41.false
-Evil Breadstick.1.1.25.46.false
-Goblin.4.1.24.7.false
+27.3.Iron Armor 19 32 1
+5
+Goblin.4.1.2.37.false
+Goblin.4.1.8.25.false
+Orc.7.2.16.42.false
+Evil Breadstick.1.1.27.35.false
+Goblin.4.1.26.2.false
