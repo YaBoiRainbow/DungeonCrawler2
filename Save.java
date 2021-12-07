@@ -153,14 +153,14 @@ public class Save{
                         ItemType iT = Enum.valueOf(ItemType.class, itemType);
 
 			//starts where the last variable ended and goes till the next space.
-                        int spaceIndex2 = line.indexOf(".", spaceIndex);
+                        int spaceIndex2 = line.indexOf(".", spaceIndex + 1);
                         String nombre = line.substring(spaceIndex + 1, spaceIndex2);
 
-                        int spaceIndex3 = line.indexOf(".", spaceIndex2);
+                        int spaceIndex3 = line.indexOf(".", spaceIndex2 + 1);
                         String weight = line.substring(spaceIndex2 +1, spaceIndex3);
                         int wg = Integer.valueOf(weight);
 
-                        int spaceIndex4 = line.indexOf(".", spaceIndex3);
+                        int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
                         String val = line.substring(spaceIndex3 + 1, spaceIndex4);
                         int value = Integer.valueOf(val);
 
@@ -183,26 +183,26 @@ public class Save{
 			String bStrRow = line.substring(0, spaceIndex);
 		       	int bRow = Integer.valueOf(bStrRow);
 
-			int spaceIndex2 = line.indexOf(" ", spaceIndex);
+			int spaceIndex2 = line.indexOf(" ", spaceIndex + 1);
 			String bStrCol = line.substring(spaceIndex, spaceIndex2);
 			int bCol = Integer.valueOf(bStrCol);
 
-			int spaceIndex3 = line.indexOf(" ", spaceIndex2);
+			int spaceIndex3 = line.indexOf(" ", spaceIndex2 + 1);
 			String itemType = line.substring(spaceIndex2, spaceIndex3);
 			ItemType iT = Enum.valueOf(ItemType.class, itemType);
 
-			int spaceIndex4 = line.indexOf(" ", spaceIndex3);
+			int spaceIndex4 = line.indexOf(" ", spaceIndex3 + 1);
 			String nombre = line.substring(spaceIndex3, spaceIndex4);
 			
-			int spaceIndex5 = line.indexOf(" ", spaceIndex4);
+			int spaceIndex5 = line.indexOf(" ", spaceIndex4 + 1);
 			String weight = line.substring(spaceIndex4, spaceIndex5);
 			int wg = Integer.valueOf(weight);
 
-			int spaceIndex6 = line.indexOf(" ",spaceIndex5);
+			int spaceIndex6 = line.indexOf(" ",spaceIndex5 + 1);
 			String val = line.substring(spaceIndex5, spaceIndex6);
 			int value = Integer.valueOf(val);
 
-			int spaceIndex7 = line.indexOf(" ",spaceIndex6);
+			int spaceIndex7 = line.indexOf(" ",spaceIndex6 + 1);
 			String strength = line.substring(spaceIndex6, spaceIndex7);
 			int stren = Integer.valueOf(strength);
 
@@ -220,10 +220,10 @@ public class Save{
 			int spaceIndex = line.indexOf(".");
 			String enemyName = line.substring(0,spaceIndex);
 			
-			int spaceIndex2 = line.indexOf(".", spaceIndex);
+			int spaceIndex2 = line.indexOf(".", spaceIndex + 1);
 			int eAtck = Integer.valueOf(line.substring(spaceIndex ,spaceIndex2));
 
-			int spaceIndex3 = line.indexOf(".");
+			int spaceIndex3 = line.indexOf(".", spaceIndex2 + 1);
 			int eHeal = Integer.valueOf(line.substring(spaceIndex2,spaceIndex3));
 			
 			//if(line.substring(spaceIndex3 + 1) == "false"){
@@ -231,15 +231,15 @@ public class Save{
 			//}
 			//else{boolean bttlActive = true;}
 
-			int spaceIndex4 = line.indexOf(".", spaceIndex3);
+			int spaceIndex4 = line.indexOf(".", spaceIndex3 + 1);
 			String eStrRow = line.substring(spaceIndex3, spaceIndex4);
 			int erow = Integer.valueOf(eStrRow);
 
-			int spaceIndex5 = line.indexOf(".", spaceIndex4);
+			int spaceIndex5 = line.indexOf(".", spaceIndex4 + 1);
 			String eStrCol = line.substring(spaceIndex4,spaceIndex5);
 			int ecol = Integer.valueOf(eStrCol);
 
-			int spaceIndex6 = line.indexOf(".", spaceIndex5);
+			int spaceIndex6 = line.indexOf(".", spaceIndex5 + 1);
 			String eStrProt = line.substring(spaceIndex5,spaceIndex6);
 			int eProt = Integer.valueOf(eStrProt);
 			Enemy e = new Enemy(enemyName, erow, ecol, eHeal, eAtck, eProt);
