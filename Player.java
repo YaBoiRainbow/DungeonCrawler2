@@ -3,6 +3,12 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import ansi_terminal.*;
 
+/**
+ *The class Player handles all the information regarding the user's character in game.
+ *This class extends Character
+ *@author Professor Ian, Tommy Garloch, Simon Jones, and Nico Guzzone.
+ */
+
 public class Player extends Character {
     private Inventory items;
     public static String name;
@@ -19,6 +25,10 @@ public class Player extends Character {
         items.addAndEquip(new Item(ItemType.Armor, "Iron Armor", 19, 32, 1));
     }
 
+    /**
+     *gets the damage value based on player's equipped weapon.
+     *@return returns damage value of 1 if we have no weapon or the strength of weapon value if we do have a weapon equipped. 
+     */
     @Override
     public int getDamage() {
         Item weapon = items.getEquippedWeapon();
@@ -30,11 +40,18 @@ public class Player extends Character {
         }
     }
 
+    /**
+     *gets the name of the character that he player input.
+     */
     @Override
     public String getName() {
         return this.name;
     }
 
+    /**
+     *gets the armor value attributed to the player. 
+     *@return returns armor strength of equipped armor and if there is no armor then it returns 0. 
+     */
     @Override
     public int getProtection() {
         Item armor = items.getEquippedArmor();
@@ -46,6 +63,9 @@ public class Player extends Character {
         }
     }
 
+    /**
+     *gets the inventory that the player is attatched to as well as processing player's dialogue and name before game starts.
+     */
     public Inventory getInventory() {
         return items;
     }public void getInfo()throws InterruptedException{

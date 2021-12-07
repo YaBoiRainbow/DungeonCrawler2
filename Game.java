@@ -3,6 +3,12 @@
 import java.util.ArrayList;
 import ansi_terminal.*;
 
+/**
+ *
+ *Game is a class that handles parts of the display for the game like the instructions as well as handling transitions between floors. 
+ *@author Professor Ian, Tommy Garloch, Simon Jones, and Nico Guzzone.
+ */
+
 public class Game{
     private String name;
     public static Room room;
@@ -18,7 +24,9 @@ public class Game{
     }
 
     // prints a help menu to the left of the map
-    
+    /**
+     *displays controls
+     */
     private void showHelp() {
         String[] cmds = {"Commands:",
                          "---------",
@@ -44,6 +52,10 @@ public class Game{
     }
 
     // right under the map we keep a line for status messages
+    /**
+     *reserves a spot on console to display status messages.
+     *@param mesg string variable for status message to user.
+     */
     private void setStatus(String mesg) {
         // clear anything old first
         Terminal.warpCursor(room.getRows(), 0);
@@ -57,6 +69,9 @@ public class Game{
     }
 
     // code for when the player tries to pickup an item
+    /**
+     *processes scenarios regarding a player picking up an item
+     */
     private void pickup() {
         Box thing = checkForBox();
         if (thing == null) {
@@ -74,6 +89,9 @@ public class Game{
     }
 
     // code for when the player tries to drop an item
+    /**
+     *Drops the item of a player's choosing and places a box on his position containing dropped item and redraws map to display it.
+     */
     private void drop() {
         if (checkForBox() == null) {
             Item dropped = player.getInventory().drop();
@@ -88,6 +106,11 @@ public class Game{
     }
 
     // handle the key which was read - return false if we quit the game
+    /**
+     *Decides what to do with what keys the user presses based off of the controls.
+     *@param key stores the key the player pressed.
+     *@return returns a boolean that either quits the game or keeps the game going. 
+     */
     private boolean handleKey(Key key) {
         switch (key) {
 	    case j:
@@ -148,12 +171,19 @@ public class Game{
 
     // this is called when we need to redraw the room and help menu
     // this happens after going into a menu like for choosing items
+    /**
+     *redraws the map and controls on console.
+     */
     private void redrawMapAndHelp() {
         room.draw();
         showHelp();
     }
 
     // returns a Box if the player is on it -- otherwise null
+    /**
+     *checks if there is a box the player is on top of so that the player can see what is in it and collect it.
+     *@return returns null.
+     */
     private Box checkForBox() {
         Position playerLocation = player.getPosition();
 
@@ -167,6 +197,10 @@ public class Game{
     }
 
     // check for battles and return false if player has died
+    /**
+     * checks if the player has died or not. If the player has not died in battle then it processes what happened to player and enemies.
+     * @return returns fight data if player is alive. Otherwise it returns true if they are dead.
+     */
     private boolean checkBattles() {
         Position playerLocation = player.getPosition();
 
@@ -186,7 +220,9 @@ public class Game{
 
         return true;
     }
-
+	/**
+	 *Allows the player to go down to a lower floor and informs them they cannot go if there is no way to go down.
+	 */
     private void goDown(){
 	int level = room.getLevel();
 	Position playerLocation = player.getPosition();
@@ -207,6 +243,10 @@ public class Game{
 	    setStatus("There is no where for you to go down.");
 	    Terminal.pause(1.25);
 	}
+
+	 /**
+         *Allows the player to go up to a higher floor and informs them they cannot go if there is no way to go up.
+         */
     }private void goUp(){
         int level = room.getLevel();
         Position playerLocation = player.getPosition();
@@ -227,7 +267,12 @@ public class Game{
             setStatus("There is no where for you to go up.");
             Terminal.pause(1.25);
 	    }
-	}public void run() {
+
+	}
+    /**
+     *applies the draw map and help method properly.
+     */
+    public void run() {
         // draw these for the first time now
         redrawMapAndHelp();
 
