@@ -8,12 +8,12 @@ Weapon.Iron Sword.8.13.5
 Armor.Iron Armor.19.32.1
 4
 1.42.Armor.Bronze Armor.15.25.1
-8.29.Armor.Gold Armor.14.80.2
+8.29.Other.Diamond.1.200.200
 25.37.Other.Cheese Wheel.4.4000.1
-27.3.Armor.Bronze Armor.15.25.1
+27.3.Weapon.Gold Sword.7.35.6
 5
-Zombie.10.1.2.44
+Evil Breadstick.1.1.2.44
 Orc.7.2.8.26
-Evil Breadstick.1.1.16.43
-Evil Breadstick.1.1.25.40
-Goblin.4.1.27.6
+Orc.7.2.16.43
+Goblin.4.1.25.40
+Zombie.10.1.27.6

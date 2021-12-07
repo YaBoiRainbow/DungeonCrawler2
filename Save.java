@@ -240,7 +240,7 @@ public class Save{
 			String eStrCol = line.substring(spaceIndex4 + 1,spaceIndex5);
 			int ecol = Integer.valueOf(eStrCol);
 
-			String eStrProt = line.substring(spaceIndex5)
+			String eStrProt = line.substring(spaceIndex5 + 1);
 			int eProt = Integer.valueOf(eStrProt);
 			Enemy e = new Enemy(enemyName, erow, ecol, eHeal, eAtck, eProt);
 			loadEnemy.add(e);
