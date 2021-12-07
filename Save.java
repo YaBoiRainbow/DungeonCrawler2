@@ -138,14 +138,13 @@ public class Save{
                 }
                 else if(i == 5){
                         invSize = Integer.valueOf(line);
-                }else if(i == 6){
 			loadInv = new ArrayList<Item>(invSize);
 		}
 		//Inside this if statement, the computer takes all the variables individually from an Item from the players saved inventory and converts its proper variable, and then adds it to the players new load inventory.
 		//
 		//Explaining the if statement parameters.
 		//If we are past the player info lines (i > 5), then for however long the array is is how many items we create.
-                else if(i > 6 && i < 6 + invSize){
+                else if(i > 5 && i < 6 + invSize){
 			//Saves the index of the first space between Item variables
                         int spaceIndex = line.indexOf(".");
 			//it then saves a substring of the text between spaces
@@ -182,7 +181,7 @@ public class Save{
 			loadBox = new ArrayList<Box> (boxSize);
 		}
 		//Loads the boxs coordinates and what item is inside, as well as the items properties.
-		else if(i > 6 + invSize && i < 6 + invSize + boxSize +1){
+		else if(i > 6 + invSize && i < 7 + invSize + boxSize){
 			int spaceIndex = line.indexOf(".");
 			String bStrRow = line.substring(0, spaceIndex);
 		       	int bRow = Integer.valueOf(bStrRow);
@@ -216,11 +215,11 @@ public class Save{
 		}
 
 		//It then restarts the same process but with enemies in the map instead of boxes.
-		else if(i == 6 + invSize + boxSize){
+		else if(i == 7 + invSize + boxSize){
 			eSize = Integer.valueOf(line);
 		}
 			loadEnemy = new ArrayList<Enemy>(eSize);
-		if(i > 6 + invSize + boxSize && i < 6 + invSize + boxSize + eSize){
+		if(i > 7 + invSize + boxSize && i < 8 + invSize + boxSize + eSize){
 			int spaceIndex = line.indexOf(".");
 			String enemyName = line.substring(0,spaceIndex);
 			System.out.println("enemyName" + enemyName);
@@ -244,8 +243,7 @@ public class Save{
 			String eStrCol = line.substring(spaceIndex4 + 1,spaceIndex5);
 			int ecol = Integer.valueOf(eStrCol);
 
-			int spaceIndex6 = line.indexOf(".", spaceIndex5 + 1);
-			String eStrProt = line.substring(spaceIndex5 + 1,spaceIndex6);
+			String eStrProt = line.substring(spaceIndex5 +1);
 			int eProt = Integer.valueOf(eStrProt);
 			Enemy e = new Enemy(enemyName, erow, ecol, eHeal, eAtck, eProt);
 			loadEnemy.add(e);
