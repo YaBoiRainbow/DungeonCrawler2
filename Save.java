@@ -105,13 +105,13 @@ public class Save{
 
 		int eSize = 0;
 		ArrayList<Enemy> loadEnemy = new ArrayList<Enemy>();
-
+		String line;
                 int i = 0;
 		//while loop repeats until there is no more informtion in the save.txt file.
                 while(lf.hasNextLine()){
 		//i acts as a line counter, counting what line the pc is currently on.
 		//Takes in an entire line of the Save file and converts it into a string
-                String line = lf.nextLine();
+                line = lf.nextLine();
                 int lLength = line.length();
 
 		//heres where things get tricky.
@@ -119,28 +119,23 @@ public class Save{
 		//Since i == 0, we are on the first line, which always will be the players name and replaces it with whats in the firat line of the save file. 
                 if(i == 0){
                         player.name = line;
-			i++;
-                }
+		}
+		i++;
 		//Since i == 1, we are on the second line of the file. We take in the players damage, and convert it from a String to an int, using Integer,valueOf(). We then save that value to loadDmg.
-                else if(i == 1){
+                if(i == 1){
                         int loadDmg  = Integer.valueOf(line);
-			i++;
                 }
                 else if(i == 2){
                         int loadProc = Integer.valueOf(line);
-			i++;
                 }
                 else if(i == 3){
                         int loadPRow = Integer.valueOf(line);
-			i++;
                 }
                 else if(i == 4){
                         int loadPCol = Integer.valueOf(line);
-			i++;
                 }
                 else if(i == 5){
                         invSize = Integer.valueOf(line);
-			i++;
                 }else if(i == 6){
 			loadInv = new ArrayList<Item>(invSize);
 		}
